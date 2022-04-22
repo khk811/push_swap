@@ -6,11 +6,35 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:55:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/22 19:43:24 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/22 20:52:03 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack  *put_index(t_stack **stack, t_stack *new)
+{
+    t_stack *tmp;
+
+    tmp = *stack;
+    while (tmp->next != *stack)
+    {
+        if (tmp->value == new->value)
+            exit(1);
+        else if (tmp->value > new->value)
+            tmp->index++;
+        else if (tmp->value < new->value)
+            new->index++;
+        tmp = tmp->next;
+    }
+    if (tmp->value == new->value)
+        exit(1);
+    else if (tmp->value > new->value)
+        tmp->index++;
+    else if (tmp->value < new->value)
+        new->index++;
+    return (tmp);
+}
 
 void    stack_push_back(t_stack **stack, t_stack *new)
 {
@@ -23,7 +47,7 @@ void    stack_push_back(t_stack **stack, t_stack *new)
         return ;
     }
     tmp = *stack;
-    last = (*stack)->prev;
+    last = put_index(stack, new);
     new->next = tmp;
     new->prev = last;
     tmp->prev = new;
