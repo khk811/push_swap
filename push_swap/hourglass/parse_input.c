@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/22 19:58:17 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/22 20:08:02 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ long long   str_to_ll(char *s)
         ret += *s - '0';
         s++;
     }
+    ret *= sign;
     return (ret);
 }
 
