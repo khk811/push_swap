@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:55:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/22 20:52:03 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 16:01:28 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack  *put_index(t_stack **stack, t_stack *new)
     while (tmp->next != *stack)
     {
         if (tmp->value == new->value)
-            exit(1);
+            print_error();
         else if (tmp->value > new->value)
             tmp->index++;
         else if (tmp->value < new->value)
@@ -28,7 +28,7 @@ t_stack  *put_index(t_stack **stack, t_stack *new)
         tmp = tmp->next;
     }
     if (tmp->value == new->value)
-        exit(1);
+        print_error();
     else if (tmp->value > new->value)
         tmp->index++;
     else if (tmp->value < new->value)

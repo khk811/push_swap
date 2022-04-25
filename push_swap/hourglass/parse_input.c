@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 15:55:06 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 16:02:57 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int is_str_int(char *s)
 
     input = str_to_ll(s);
     if (input > 2147483647 || input < -2147483648)
-        exit(1);
+        print_error();
     return (input);
 }
 
@@ -69,7 +69,6 @@ t_stack *parse_input(int argc, char **argv)
 {
     t_stack *ret;
     int i;
-    //int value;
 
     i = 1;
     ret = NULL;

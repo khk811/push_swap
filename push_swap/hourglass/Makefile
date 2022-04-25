@@ -6,7 +6,7 @@
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:13:42 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/04/25 13:58:06 by hyunkkim         ###   ########seoul.kr   #
+#    Updated: 2022/04/25 16:01:56 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC= main.c \
 	push.c \
 	rotate.c \
 	a_to_b.c \
-	b_to_a.c
+	b_to_a.c \
+	utils.c
 OBJ=$(SRC:.c=.o)
 
 $(NAME) :$(LIB) $(OBJ)

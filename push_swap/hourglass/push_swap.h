@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:12:00 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 14:44:49 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 16:01:05 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void    r_rotate(t_stack **stack, char *operation);
 void    a_to_b(t_stack **stack_a, t_stack **stack_b);
 void    b_to_a(t_stack **stack_a, t_stack **stack_b);
 int count_stack_size(t_stack *stack);
+void    print_error(void);
 
 #endif
