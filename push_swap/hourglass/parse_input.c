@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 16:37:44 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:53:09 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ long long	str_to_ll(char *s)
 		sign = -1;
 		s++;
 	}
-	while (*s && ft_isdigit(*s))
+	while (*s)
 	{
 		ret *= 10;
 		ret += *s - '0';
@@ -35,10 +35,25 @@ long long	str_to_ll(char *s)
 	return (ret);
 }
 
+int	is_str_digit(char *s)
+{
+	if (*s == '+' || *s == '-')
+		s++;
+	while (*s)
+	{
+		if (!ft_isdigit(*s))
+			return (0);
+		s++;
+	}
+	return (1);
+}
+
 int	is_str_int(char *s)
 {
 	long long	input;
 
+	if (!is_str_digit(s))
+		print_error();
 	input = str_to_ll(s);
 	if (input > 2147483647 || input < -2147483648)
 		print_error();
