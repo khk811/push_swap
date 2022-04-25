@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/22 21:29:29 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 13:42:37 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ int main(int argc, char **argv)
     stack_b = NULL;
     //sort?(stack_a, stack_b);
     i = 0;
-    //push(&stack_b, &stack_a);
     a_to_b(&stack_a, &stack_b);
     tmp = stack_a;
     while (i < argc)
     {
+        if (stack_a == NULL)
+            break ;
         printf("stack_a[%d] : %d , idx: %d\n", i, stack_a->value, stack_a->index);
         stack_a = stack_a->next;
         if (stack_a == tmp)
@@ -39,6 +40,8 @@ int main(int argc, char **argv)
     tmp = stack_b;
     while (i < argc)
     {
+        if (stack_b == NULL)
+            break ;
         printf("stack_b[%d] : %d , idx: %d\n", i, stack_b->value, stack_b->index);
         stack_b = stack_b->next;
         if (stack_b == tmp)

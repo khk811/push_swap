@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 20:20:49 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/22 21:47:06 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 13:42:27 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void    push(t_stack **dst, t_stack **src)
     top = *src;
     (top->prev)->next = top->next;
     (top->next)->prev = top->prev;
-    *src = top->next;
+    if (top->next != top)
+        *src = top->next;
+    else
+        *src = NULL;
     if (*dst == NULL)
     {
         *dst = top;
