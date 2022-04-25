@@ -6,7 +6,7 @@
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:13:42 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/04/25 16:01:56 by hyunkkim         ###   ########seoul.kr   #
+#    Updated: 2022/04/25 19:41:32 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ RM=rm -f
 CP=cp
 SRC= main.c \
 	parse_input.c \
+	check_sort.c \
 	new_stack_elem.c \
 	stack_utils.c \
 	push.c \
