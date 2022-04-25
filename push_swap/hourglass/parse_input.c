@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 16:53:09 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/25 20:53:12 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ t_stack	*parse_input(int argc, char **argv)
 		convert_argv_str(argv[i], &ret);
 		i++;
 	}
+	if (is_stack_sorted(ret))
+		exit(0);
 	return (ret);
 }

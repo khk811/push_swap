@@ -6,7 +6,7 @@
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:13:42 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/04/25 20:19:30 by hyunkkim         ###   ########seoul.kr   #
+#    Updated: 2022/04/25 20:47:07 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC= main.c \
 	push.c \
 	swap.c \
 	rotate.c \
+	hard_sort.c \
 	a_to_b.c \
 	b_to_a.c \
 	utils.c

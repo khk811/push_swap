@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 17:11:52 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 20:51:28 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,25 @@ int	main(int argc, char **argv)
 
 	stack_a = parse_input(argc, argv);
 	stack_b = NULL;
-	a_to_b(&stack_a, &stack_b);
-	//printf("atob\n");
-	b_to_a(&stack_a, &stack_b);
-	//printf("btoa\n");
+	if (count_stack_size(stack_a) <= 5)
+		hard_sort(&stack_a, &stack_b);
+	else
+	{
+		a_to_b(&stack_a, &stack_b);
+		b_to_a(&stack_a, &stack_b);
+	}
+	/*
+	int	i;
+	t_stack	*tmp;
+	i = 0;
+	tmp = stack_a;
+	while (i < argc)
+	{
+		printf("stack_a[%d]: %d (idx - %d)\n", i, stack_a->value, stack_a->index);
+		stack_a = stack_a->next;
+		if (stack_a == tmp)
+			break ;
+		i++;
+	}*/
 	return (0);
 }
