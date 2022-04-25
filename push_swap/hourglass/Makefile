@@ -6,7 +6,7 @@
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:13:42 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/04/22 19:55:47 by hyunkkim         ###   ########seoul.kr   #
+#    Updated: 2022/04/25 13:58:06 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,11 @@ CP=cp
 SRC= main.c \
 	parse_input.c \
 	new_stack_elem.c \
-	stack_utils.c
+	stack_utils.c \
+	push.c \
+	rotate.c \
+	a_to_b.c \
+	b_to_a.c
 OBJ=$(SRC:.c=.o)
 
 $(NAME) :$(LIB) $(OBJ)
