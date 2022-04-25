@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 15:26:05 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 15:53:29 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    int i;
-    t_stack *tmp;
+    //int i;
+    //t_stack *tmp;
 
     stack_a = parse_input(argc, argv);
     stack_b = NULL;
-    i = 0;
+    //i = 0;
     a_to_b(&stack_a, &stack_b);
     b_to_a(&stack_a, &stack_b);
+    /*
     tmp = stack_a;
     while (i < argc)
     {
@@ -47,6 +48,6 @@ int main(int argc, char **argv)
         if (stack_b == tmp)
             break ;
         i++;
-    }
+    }*/
     return (0);
 }
