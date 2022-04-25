@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 14:32:27 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 15:26:05 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(int argc, char **argv)
 
     stack_a = parse_input(argc, argv);
     stack_b = NULL;
-    //sort?(stack_a, stack_b);
     i = 0;
     a_to_b(&stack_a, &stack_b);
     b_to_a(&stack_a, &stack_b);

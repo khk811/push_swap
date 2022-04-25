@@ -6,13 +6,13 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 20:20:49 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 13:42:27 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 15:21:37 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    push(t_stack **dst, t_stack **src)
+void    push(t_stack **dst, t_stack **src, char *operation)
 {
     t_stack *top;
 
@@ -37,5 +37,7 @@ void    push(t_stack **dst, t_stack **src)
         top->next = *dst;
         (top->prev)->next = top;
         (top->next)->prev = top;
+        *dst = top;
     }
+    printf("%s\n", operation);
 }

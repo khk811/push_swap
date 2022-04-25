@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:33 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 14:28:49 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 15:23:19 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void    b_to_a(t_stack **stack_a, t_stack **stack_b)
             if (location < (size / 2))
             {
                 while (tmp != *stack_b)
-                    rotate(stack_b);
+                    rotate(stack_b, "ra");
             }
             else
             {
                 while (tmp != *stack_b)
-                    r_rotate(stack_b);
+                    r_rotate(stack_b, "rrb");
             }
-            push(stack_a, stack_b);
+            push(stack_a, stack_b, "pa");
             size--;
             if (*stack_b == NULL)
                 break ;
