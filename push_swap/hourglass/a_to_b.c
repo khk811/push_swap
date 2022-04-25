@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 21:14:17 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 16:33:24 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/25 17:25:28 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,11 @@ void	a_to_b(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*top;
 	int		chunk;
 	int		num;
-	int		a_size;
 
 	top = *stack_a;
 	chunk = make_chunk(*stack_a);
 	num = 0;
-	a_size = count_stack_size(*stack_a);
-	while (a_size-- && top)
+	while (*stack_a)
 	{
 		top = *stack_a;
 		if (top->index <= num)
