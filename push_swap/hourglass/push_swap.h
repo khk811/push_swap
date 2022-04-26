@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:12:00 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 20:46:48 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/26 16:48:26 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 
 t_stack	*new_stack_elem(int input);
 t_stack	*parse_input(int argc, char **argv);
-int is_stack_sorted(t_stack *stack);
+int		is_stack_sorted(t_stack *stack);
 void	stack_push_back(t_stack **stack, t_stack *new);
 void	push(t_stack **dst, t_stack **src, char *operation);
 void	swap(t_stack **stack, char *operation);
