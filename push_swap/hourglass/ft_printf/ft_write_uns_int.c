@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_write_uns_int.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 19:50:15 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 17:16:47 by hyunkkim         ###   ########seoul.kr  */
+/*   Created: 2022/02/15 17:10:42 by hyunkkim          #+#    #+#             */
+/*   Updated: 2022/02/16 20:57:38 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	swap(t_stack **stack, char *operation)
+int	ft_write_uns_int(va_list list)
 {
-	t_stack	*top;
-	t_stack	*second;
+	unsigned int	arg_num;
+	        char	*ret_str;
+	         int	ret;
 
-	top = *stack;
-	if (top->next == top)
-		return ;
-	second = top->next;
-	(top->prev)->next = second;
-	(second->next)->prev = top;
-	top->next = second->next;
-	second->prev = top->prev;
-	top->prev = second;
-	second->next = top;
-	*stack = second;
-	ft_printf("%s\n", operation);
+	arg_num = va_arg(list, unsigned int);
+	ret_str = ft_uns_itoa(arg_num, 0);
+	ret = ft_write_n_free(&ret_str);
+	return (ret);
 }

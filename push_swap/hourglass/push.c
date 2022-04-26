@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 20:20:49 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 16:40:06 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:16:12 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	push(t_stack **dst, t_stack **src, char *operation)
 		(top->next)->prev = top;
 		*dst = top;
 	}
-	printf("%s\n", operation);
+	ft_printf("%s\n", operation);
 }

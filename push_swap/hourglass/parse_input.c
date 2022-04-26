@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 14:44:21 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/26 17:17:18 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ t_stack	*parse_input(int argc, char **argv)
 	}
 	if (is_stack_sorted(ret))
 	{
-		printf("OK\n");
+		ft_printf("OK\n");
 		system("leaks push_swap");
 		exit(1);
 	}

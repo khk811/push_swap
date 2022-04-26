@@ -5,46 +5,52 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/11 12:13:42 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/04/26 17:15:45 by hyunkkim         ###   ########seoul.kr   #
+#    Created: 2022/02/15 17:13:44 by hyunkkim          #+#    #+#              #
+#    Updated: 2022/04/26 17:22:25 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=push_swap
+NAME=libftprintf.a
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror
-LIB_NAME=ftprintf
-LIB_DIR= ./ft_printf/
+LIB_DIR=../Libft/
+LIB_NAME=ft
 LIB=$(LIB_DIR)lib$(LIB_NAME).a
-LIBFT=libftprintf.a
-INCLUDE=-I ./Libft -I ./ft_printf
+INCLUDE=-I ../Libft
+AR=ar
+ARFLAGS=rcs
 RM=rm -f
 CP=cp
-SRC= main.c \
-	parse_input.c \
-	check_sort.c \
-	new_stack_elem.c \
-	stack_utils.c \
-	push.c \
-	swap.c \
-	rotate.c \
-	hard_sort.c \
-	a_to_b.c \
-	b_to_a.c \
-	utils.c
+SRC= ft_printf.c \
+	  ft_is.c \
+	  ft_addrtoa.c \
+	  ft_uns_itoa.c \
+	  ft_utils_str.c \
+	  ft_parce_tree.c \
+	  ft_get_func.c \
+	  ft_write_addr.c \
+	  ft_write_char.c \
+	  ft_write_digit.c \
+	  ft_write_hex_lo.c \
+	  ft_write_hex_up.c \
+	  ft_write_percent.c \
+	  ft_write_str.c \
+	  ft_write_uns_int.c
 OBJ=$(SRC:.c=.o)
 
-$(NAME) :$(LIB) $(OBJ)
-	$(CC) $(CFLAGS) -L$(LIB_DIR) -l$(LIB_NAME) $(OBJ) -o $(NAME)
+$(NAME) : $(LIB) $(OBJ)
+	$(CP) $(LIB) $(NAME)
+	$(AR) $(ARFLAGS) $@ $(OBJ)
 
 %.o : %.c
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
 
 $(LIB) :
-	make -C $(LIB_DIR) all
-	$(CP) $(LIB) ./
+	make -C $(LIB_DIR) bonus
 
 all : $(NAME)
+
+re : fclean all
 
 clean :
 	make -C $(LIB_DIR) clean
@@ -53,15 +59,5 @@ clean :
 fclean : clean
 	make -C $(LIB_DIR) fclean
 	$(RM) $(NAME)
-	$(RM) $(LIBFT)
 
-re : fclean all
-
-leaks : $(LIB)
-	$(CC) $(CFLAGS) $(INCLUDE) -L$(LIB_DIR) -l$(LIB_NAME) $(SRC) -g
-
-clean_leaks :
-	$(RM) a.out
-	rm -rf a.out.dSYM
-
-.PHONY : all clean fclean re
+.PHONY: all clean fclean re

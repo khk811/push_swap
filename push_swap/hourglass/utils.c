@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:00:12 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 16:38:27 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:17:05 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	print_error(void)
 {
-	printf("Error\n");
+	ft_printf("Error\n");
 	exit(1);
 }

@@ -6,12 +6,11 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 16:19:52 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/26 17:14:33 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;

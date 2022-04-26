@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_write_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 19:50:15 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 17:16:47 by hyunkkim         ###   ########seoul.kr  */
+/*   Created: 2022/02/15 17:10:39 by hyunkkim          #+#    #+#             */
+/*   Updated: 2022/02/16 21:34:03 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	swap(t_stack **stack, char *operation)
+int	ft_write_str(va_list list)
 {
-	t_stack	*top;
-	t_stack	*second;
+	char	*arg_str;
+	 int	ret;
 
-	top = *stack;
-	if (top->next == top)
-		return ;
-	second = top->next;
-	(top->prev)->next = second;
-	(second->next)->prev = top;
-	top->next = second->next;
-	second->prev = top->prev;
-	top->prev = second;
-	second->next = top;
-	*stack = second;
-	ft_printf("%s\n", operation);
+	arg_str = va_arg(list, char *);
+	if (!arg_str)
+	{
+		ret = write(1, "(null)", ft_strlen("(null)"));
+		if (ret < (int)ft_strlen("(null)"))
+			ret = -1;
+	}
+	else
+	{
+		ret = write(1, arg_str, ft_strlen(arg_str));
+		if (ret < (int)ft_strlen(arg_str))
+			ret = -1;
+	}
+	return (ret);
 }

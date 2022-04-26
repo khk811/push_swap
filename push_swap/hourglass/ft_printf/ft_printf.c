@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 19:50:15 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 17:16:47 by hyunkkim         ###   ########seoul.kr  */
+/*   Created: 2022/02/03 13:29:15 by hyunkkim          #+#    #+#             */
+/*   Updated: 2022/02/15 15:53:51 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	swap(t_stack **stack, char *operation)
+int	ft_printf(const char *format, ...)
 {
-	t_stack	*top;
-	t_stack	*second;
+	va_list	list;
+	    int	ret;
+	    int	ret_before;
 
-	top = *stack;
-	if (top->next == top)
-		return ;
-	second = top->next;
-	(top->prev)->next = second;
-	(second->next)->prev = top;
-	top->next = second->next;
-	second->prev = top->prev;
-	top->prev = second;
-	second->next = top;
-	*stack = second;
-	ft_printf("%s\n", operation);
+	va_start(list, format);
+	ret = 0;
+	while (*format)
+	{
+		ret_before = ret;
+		if (*format == '%')
+		{
+			format++;
+			ret += ft_parce_tree(&format, list);
+		}
+		else
+			ret += ft_write_other(format++);
+		if (ret_before > ret)
+		{
+			ret = -1;
+			break ;
+		}
+	}
+	va_end(list);
+	return (ret);
 }
