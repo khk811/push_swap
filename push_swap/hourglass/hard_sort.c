@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:43:18 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/28 18:00:17 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 18:53:36 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	push_low_index(t_stack **stack_a, t_stack **stack_b, int n)
 		location++;
 		target = target->next;
 	}
-	if (location <  (count_stack_size(*stack_a) / 2))
+	if (location < (count_stack_size(*stack_a) / 2))
 	{
 		while (target != *stack_a)
 			rotate(stack_a, "ra");
