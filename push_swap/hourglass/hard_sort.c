@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:43:18 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 16:39:36 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 18:00:17 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,29 @@ void	sort_three(t_stack **stack)
 
 void	push_low_index(t_stack **stack_a, t_stack **stack_b, int n)
 {
-	t_stack	*tmp;
+	t_stack	*target;
+	int		location;
 
-	tmp = *stack_a;
-	while (tmp)
+	target = *stack_a;
+	location = 0;
+	while (target)
 	{
-		if (tmp->index == n)
-		{
-			push(stack_b, stack_a, "pb");
-			return ;
-		}
-		rotate(stack_a, "ra");
-		tmp = *stack_a;
+		if (target->index == n)
+			break ;
+		location++;
+		target = target->next;
 	}
+	if (location <  (count_stack_size(*stack_a) / 2))
+	{
+		while (target != *stack_a)
+			rotate(stack_a, "ra");
+	}
+	else
+	{
+		while (target != *stack_a)
+			r_rotate(stack_a, "rra");
+	}
+	push(stack_b, stack_a, "pb");
 }
 
 void	sort_four_five(t_stack **stack_a, t_stack **stack_b)
