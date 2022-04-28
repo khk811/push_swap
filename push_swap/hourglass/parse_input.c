@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/28 13:50:23 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 14:12:24 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	convert_argv_str(char *s, t_stack **stack)
 
 	split_ret = ft_split(s, ' ');
 	i = 0;
+	if (!split_ret[i])
+		print_error();
 	while (split_ret[i])
 	{
 		value = is_str_int(split_ret[i]);
@@ -97,7 +99,6 @@ t_stack	*parse_input(int argc, char **argv)
 	if (is_stack_sorted(ret))
 	{
 		ft_printf("OK\n");
-		system("leaks push_swap");
 		exit(1);
 	}
 	return (ret);
