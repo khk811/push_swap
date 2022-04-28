@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:12:00 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 16:48:26 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 13:31:13 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include "libft.h"
+# include "ft_printf.h"
 
 typedef struct s_stack
 {
