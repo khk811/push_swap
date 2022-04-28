@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:46:41 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 16:40:34 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/28 21:32:44 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*new_stack_elem(int input)
 
 	ret = ft_calloc(1, sizeof(t_stack));
 	if (!ret)
-		return (NULL);
+		exit(1);
 	ret->index = 0;
 	ret->value = input;
 	ret->prev = ret;

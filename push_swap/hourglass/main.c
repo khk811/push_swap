@@ -6,11 +6,12 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 17:53:08 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 21:32:28 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -27,19 +28,5 @@ int	main(int argc, char **argv)
 		a_to_b(&stack_a, &stack_b);
 		b_to_a(&stack_a, &stack_b);
 	}
-	/*
-	int	i;
-	t_stack	*tmp;
-	i = 0;
-	tmp = stack_a;
-	while (i < argc)
-	{
-		printf("stack_a[%d]: %d (idx - %d)\n", i, stack_a->value, stack_a->index);
-		stack_a = stack_a->next;
-		if (stack_a == tmp)
-			break ;
-		i++;
-	}*/
-	//system("leaks push_swap");
 	return (0);
 }

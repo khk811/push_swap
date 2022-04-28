@@ -6,11 +6,25 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:47:33 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 16:35:39 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/28 21:19:14 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	rotate_until(t_stack **stack, t_stack *target, char *operation)
+{
+	if (ft_strncmp(operation, "rb", 2) == 0)
+	{
+		while (target != *stack)
+			rotate(stack, "rb");
+	}
+	else
+	{
+		while (target != *stack)
+			r_rotate(stack, "rrb");
+	}
+}
 
 void	b_to_a(t_stack **stack_a, t_stack **stack_b)
 {
@@ -26,23 +40,16 @@ void	b_to_a(t_stack **stack_a, t_stack **stack_b)
 		if (tmp->index == size)
 		{
 			if (location < (size / 2))
-			{
-				while (tmp != *stack_b)
-					rotate(stack_b, "rb");
-			}
+				rotate_until(stack_b, tmp, "rb");
 			else
-			{
-				while (tmp != *stack_b)
-					r_rotate(stack_b, "rrb");
-			}
+				rotate_until(stack_b, tmp, "rrb");
 			push(stack_a, stack_b, "pa");
 			size--;
-			if (*stack_b == NULL)
-				break ;
 			tmp = *stack_b;
 			location = 0;
 		}
-		tmp = tmp->next;
+		if (tmp)
+			tmp = tmp->next;
 		location++;
 	}
 }
