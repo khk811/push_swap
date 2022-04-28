@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/26 17:17:18 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/28 13:50:23 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	is_str_digit(char *s)
 {
 	if (*s == '+' || *s == '-')
 		s++;
+	if (!ft_isdigit(*s))
+		return (0);
 	while (*s)
 	{
 		if (!ft_isdigit(*s))
