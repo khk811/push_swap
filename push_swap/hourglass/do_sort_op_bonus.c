@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:08:35 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 20:12:18 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 21:33:56 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	do_sort_op(t_stack **stack_a, t_stack **stack_b, char *op)
 			do_rotates(stack_a, stack_b, op);
 		else if (ft_strlen(op) == 3)
 			do_r_rotate(stack_a, stack_b, op);
+		else
+			print_error();
 	}
 	else
 		print_error();
