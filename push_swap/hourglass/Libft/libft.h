@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunkkim <hyunkkim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:41:23 by hyunkkim          #+#    #+#             */
-/*   Updated: 2021/12/17 17:08:28 by hyunkkim         ###   ########.fr       */
+/*   Updated: 2022/04/08 12:09:27 by hyunkkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
 typedef struct s_list {
-	        void	*content;
+	void			*content;
 	struct s_list	*next;
 }	t_list;
 

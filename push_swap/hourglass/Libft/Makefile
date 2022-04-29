@@ -38,6 +38,8 @@ SRCS= ft_isalpha.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
 	  ft_putnbr_fd.c \
+	  get_next_line.c \
+	  get_next_line_utils.c
 
 SRCS_BONUS= ft_lstnew.c \
 			ft_lstadd_front.c \
