@@ -6,14 +6,14 @@
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:13:42 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/04/29 17:49:19 by hyunkkim         ###   ########seoul.kr   #
+#    Updated: 2022/04/29 21:12:25 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=push_swap
 BONUS=checker
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS=-Wall -Wextra -Werror
 LIB_NAME=ftprintf
 LIB_DIR= ./ft_printf/
 LIB=$(LIB_DIR)lib$(LIB_NAME).a
@@ -35,6 +35,7 @@ SRC= main.c \
 	utils.c
 SRC_BONUS = main_bonus.c \
 			parse_input_bonus.c \
+			parse_operation_bonus.c \
 			check_sort_bonus.c \
 			new_stack_elem_bonus.c \
 			do_sort_op_bonus.c \
