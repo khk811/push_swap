@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:50:15 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 14:28:26 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 21:25:12 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	swap(t_stack **stack)
 	t_stack	*second;
 
 	top = *stack;
+	if (!top)
+		return ;
 	if (top->next == top)
 		return ;
 	second = top->next;
