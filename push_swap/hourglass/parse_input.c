@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 17:50:25 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 19:58:41 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void	convert_argv_str(char *s, t_stack **stack)
 		value = is_str_int(split_ret[i]);
 		stack_push_back(stack, new_stack_elem(value));
 		free(split_ret[i]);
-		split_ret[i][3] = 54;
 		split_ret[i] = NULL;
 		i++;
 	}
