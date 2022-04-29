@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:07:21 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/02/15 17:11:25 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 21:44:06 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 t_func	ft_get_func(char c)
 {
 	t_func	func_arr[9];
-	  char	*format_specifiers;
-	   int	i;
+	char	*format_specifiers;
+	int		i;
 
 	format_specifiers = "cspdiuxX%";
 	func_arr[0] = ft_write_char;

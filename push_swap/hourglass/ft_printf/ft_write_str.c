@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:10:39 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/02/16 21:34:03 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 21:47:49 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_write_str(va_list list)
 {
 	char	*arg_str;
-	 int	ret;
+	int		ret;
 
 	arg_str = va_arg(list, char *);
 	if (!arg_str)

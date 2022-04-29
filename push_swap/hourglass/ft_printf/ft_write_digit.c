@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:10:27 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/02/15 17:11:10 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 21:46:20 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_write_digit(va_list list)
 {
-	 int	arg_num;
+	int		arg_num;
 	char	*ret_str;
-	 int	ret;
+	int		ret;
 
 	ret = 0;
 	arg_num = va_arg(list, int);

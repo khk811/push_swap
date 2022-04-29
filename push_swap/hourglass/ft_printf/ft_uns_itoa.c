@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:10:00 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/02/15 17:11:14 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 21:45:05 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_count_digits(unsigned int n, int flag)
 
 static unsigned int	ft_make_divisor(unsigned int n, int flag)
 {
-	         int	i;
+	int				i;
 	unsigned int	ret;
 
 	ret = 1;
@@ -60,7 +60,7 @@ static unsigned int	ft_make_divisor(unsigned int n, int flag)
 static char	*ft_str_hex(char *arr, unsigned int n, int flag)
 {
 	unsigned int	divisor;
-	         int	i;
+	int				i;
 
 	i = 0;
 	divisor = ft_make_divisor(n, flag);
@@ -81,8 +81,8 @@ static char	*ft_str_hex(char *arr, unsigned int n, int flag)
 
 char	*ft_uns_itoa(unsigned int n, int flag)
 {
-	        char	*ret;
-	         int	i;
+	char			*ret;
+	int				i;
 	unsigned int	divisor;
 
 	i = 0;

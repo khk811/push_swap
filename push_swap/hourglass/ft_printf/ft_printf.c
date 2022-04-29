@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 13:29:15 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/02/15 15:53:51 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 21:44:23 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list	list;
-	    int	ret;
-	    int	ret_before;
+	int		ret;
+	int		ret_before;
 
 	va_start(list, format);
 	ret = 0;
