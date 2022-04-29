@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 17:49:00 by hyunkkim         ###   ########seoul.kr  */
+/*   Created: 2022/04/25 16:00:12 by hyunkkim          #+#    #+#             */
+/*   Updated: 2022/04/29 16:23:47 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-int	main(int argc, char **argv)
+void	print_error(void)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	if (argc < 2)
-		exit(1);
-	stack_a = parse_input(argc, argv);
-	stack_b = NULL;
-	if (count_stack_size(stack_a) <= 5)
-		hard_sort(&stack_a, &stack_b);
-	else
-	{
-		a_to_b(&stack_a, &stack_b);
-		b_to_a(&stack_a, &stack_b);
-	}
-	//system("leaks push_swap | grep 'leaked bytes' ");
-	return (0);
+	ft_printf("Error\n");
+	system("leaks checker | grep 'leaked bytes' ");
+	exit(1);
 }

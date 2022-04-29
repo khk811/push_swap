@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_input.c                                      :+:      :+:    :+:   */
+/*   parse_input_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 17:50:25 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/04/29 16:23:41 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 long long	str_to_ll(char *s)
 {
@@ -77,7 +77,6 @@ void	convert_argv_str(char *s, t_stack **stack)
 		value = is_str_int(split_ret[i]);
 		stack_push_back(stack, new_stack_elem(value));
 		free(split_ret[i]);
-		split_ret[i][3] = 54;
 		split_ret[i] = NULL;
 		i++;
 	}
@@ -99,7 +98,7 @@ t_stack	*parse_input(int argc, char **argv)
 	}
 	if (is_stack_sorted(ret))
 	{
-		//system("leaks push_swap | grep 'leaked bytes' ");
+		system("leaks checker | grep 'leaked bytes' ");
 		exit(0);
 	}
 	return (ret);

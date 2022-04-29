@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   new_stack_elem_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 17:49:00 by hyunkkim         ###   ########seoul.kr  */
+/*   Created: 2022/04/22 19:46:41 by hyunkkim          #+#    #+#             */
+/*   Updated: 2022/04/29 14:11:18 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-int	main(int argc, char **argv)
+t_stack	*new_stack_elem(int input)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*ret;
 
-	if (argc < 2)
+	ret = ft_calloc(1, sizeof(t_stack));
+	if (!ret)
 		exit(1);
-	stack_a = parse_input(argc, argv);
-	stack_b = NULL;
-	if (count_stack_size(stack_a) <= 5)
-		hard_sort(&stack_a, &stack_b);
-	else
-	{
-		a_to_b(&stack_a, &stack_b);
-		b_to_a(&stack_a, &stack_b);
-	}
-	//system("leaks push_swap | grep 'leaked bytes' ");
-	return (0);
+	ret->index = 0;
+	ret->value = input;
+	ret->prev = ret;
+	ret->next = ret;
+	return (ret);
 }
