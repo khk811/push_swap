@@ -28,6 +28,8 @@ t_stack	*new_stack_elem(int input);
 t_stack	*parse_input(int argc, char **argv);
 int		is_stack_sorted(t_stack *stack);
 void	stack_push_back(t_stack **stack, t_stack *new);
+void	attach_elem(t_stack **stack, t_stack *elem);
+t_stack	*detach_elem(t_stack **stack);
 void	push(t_stack **dst, t_stack **src, char *operation);
 void	swap(t_stack **stack, char *operation);
 void	rotate(t_stack **stack, char *operation);
