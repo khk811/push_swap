@@ -17,18 +17,13 @@ void	swap(t_stack **stack, char *operation)
 	t_stack	*top;
 	t_stack	*second;
 
-	top = *stack;
-	if (!top)
+	if (!*stack)
 		return ;
-	if (top->next == top)
+	if ((*stack)->next == (*stack))
 		return ;
-	second = top->next;
-	(top->prev)->next = second;
-	(second->next)->prev = top;
-	top->next = second->next;
-	second->prev = top->prev;
-	top->prev = second;
-	second->next = top;
-	*stack = second;
+	top = detach_elem(stack);
+	second = detach_elem(stack);
+	attach_elem(stack, top);
+	attach_elem(stack, second);
 	ft_printf("%s\n", operation);
 }

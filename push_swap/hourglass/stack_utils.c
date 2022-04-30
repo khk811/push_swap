@@ -54,3 +54,31 @@ void	stack_push_back(t_stack **stack, t_stack *new)
 	last->next = new;
 	return ;
 }
+
+void	attach_elem(t_stack **stack, t_stack *elem)
+{
+	if (*stack)
+	{
+		elem->prev = (*stack)->prev;
+		elem->next = *stack;
+		(elem->prev)->next = elem;
+		(elem->next)->prev = elem;
+	}
+	*stack = elem;
+}
+
+t_stack	*detach_elem(t_stack **stack)
+{
+	t_stack	*target;
+
+	target = *stack;
+	(target->prev)->next = target->next;
+	(target->next)->prev = target->prev;
+	if (target->next != target)
+		*stack = target->next;
+	else
+		*stack = NULL;
+	target->prev = target;
+	target->next = target;
+	return (target);
+}
