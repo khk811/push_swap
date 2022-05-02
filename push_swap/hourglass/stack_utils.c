@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:55:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 13:26:57 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 13:16:52 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack	*modify_stack_index(t_stack **stack, t_stack *new)
 	return (tmp);
 }
 
-void	stack_push_back(t_stack **stack, t_stack *new)
+void	add_elem_bottom(t_stack **stack, t_stack *new)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -55,7 +55,7 @@ void	stack_push_back(t_stack **stack, t_stack *new)
 	return ;
 }
 
-void	attach_elem(t_stack **stack, t_stack *elem)
+void	add_elem_top(t_stack **stack, t_stack *elem)
 {
 	if (*stack)
 	{

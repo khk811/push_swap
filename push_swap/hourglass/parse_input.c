@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/05/02 12:45:42 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 13:18:26 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_str_int(char *s)
 	return (input);
 }
 
-void	convert_argv_str(char *s, t_stack **stack)
+void	convert_argv_to_stack(char *s, t_stack **stack)
 {
 	char	**split_ret;
 	int		i;
@@ -75,7 +75,7 @@ void	convert_argv_str(char *s, t_stack **stack)
 	while (split_ret[i])
 	{
 		value = is_str_int(split_ret[i]);
-		stack_push_back(stack, new_stack_elem(value));
+		add_elem_bottom(stack, new_stack_elem(value));
 		free(split_ret[i]);
 		split_ret[i] = NULL;
 		i++;
@@ -93,7 +93,7 @@ t_stack	*parse_input(int argc, char **argv)
 	ret = NULL;
 	while (i < argc)
 	{
-		convert_argv_str(argv[i], &ret);
+		convert_argv_to_stack(argv[i], &ret);
 		i++;
 	}
 	if (is_stack_sorted(ret))
