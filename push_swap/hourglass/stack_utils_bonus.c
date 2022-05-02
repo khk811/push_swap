@@ -6,51 +6,80 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:55:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 14:11:36 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 14:04:13 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void	assign_elem_index(t_stack *elem1, t_stack *elem2)
+t_stack	*new_stack_elem(int input)
 {
-	if (elem1->value == elem2->value)
-		print_error();
-	else if (elem1->value > elem2->value)
-		elem1->index++;
-	else if (elem1->value < elem2->value)
-		elem2->index++;
+	t_stack	*ret;
+
+	ret = ft_calloc(1, sizeof(t_stack));
+	if (!ret)
+		exit(1);
+	ret->index = 0;
+	ret->value = input;
+	ret->prev = ret;
+	ret->next = ret;
+	return (ret);
 }
 
-t_stack	*modify_stack_index(t_stack **stack, t_stack *new)
+void	add_elem_top(t_stack **stack, t_stack *elem)
+{
+	if (*stack)
+	{
+		elem->prev = (*stack)->prev;
+		elem->next = *stack;
+		(elem->prev)->next = elem;
+		(elem->next)->prev = elem;
+	}
+	*stack = elem;
+}
+
+t_stack	*detach_elem(t_stack **stack)
+{
+	t_stack	*target;
+
+	target = *stack;
+	(target->prev)->next = target->next;
+	(target->next)->prev = target->prev;
+	if (target->next != target)
+		*stack = target->next;
+	else
+		*stack = NULL;
+	target->prev = target;
+	target->next = target;
+	return (target);
+}
+
+int	count_stack_size(t_stack *stack)
 {
 	t_stack	*tmp;
+	int		ret;
 
-	tmp = *stack;
-	while (tmp->next != *stack)
+	tmp = stack;
+	ret = 0;
+	while (tmp->next != stack)
 	{
-		assign_elem_index(tmp, new);
+		ret++;
 		tmp = tmp->next;
 	}
-	assign_elem_index(tmp, new);
-	return (tmp);
+	ret++;
+	return (ret);
 }
 
-void	stack_push_back(t_stack **stack, t_stack *new)
+int	is_stack_sorted(t_stack *stack)
 {
 	t_stack	*tmp;
-	t_stack	*last;
 
-	if (!*stack)
+	tmp = stack;
+	while (tmp->next != stack)
 	{
-		*stack = new;
-		return ;
+		if (tmp->value > (tmp->next)->value)
+			return (0);
+		tmp = tmp->next;
 	}
-	tmp = *stack;
-	last = modify_stack_index(stack, new);
-	new->next = tmp;
-	new->prev = last;
-	tmp->prev = new;
-	last->next = new;
-	return ;
+	return (1);
 }
