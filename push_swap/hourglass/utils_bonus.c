@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:00:12 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/29 20:43:27 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 14:43:10 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	print_error(void)
 {
 	ft_printf("Error\n");
+	system("leaks checker | grep 'leaked bytes'");
 	exit(1);
 }
