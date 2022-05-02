@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:15:32 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/05/02 13:43:25 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 14:53:32 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,6 @@ t_stack	*parse_input(int argc, char **argv)
 		i++;
 	}
 	if (is_stack_sorted(ret))
-	{
-		//system("leaks push_swap | grep 'leaked bytes'");
 		exit(0);
-	}
 	return (ret);
 }
