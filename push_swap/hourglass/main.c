@@ -6,7 +6,7 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:11:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/05/02 12:45:52 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 13:38:44 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	stack_a = parse_input(argc, argv);
 	stack_b = NULL;
 	if (count_stack_size(stack_a) <= 5)
-		hard_sort(&stack_a, &stack_b);
+		sort_below_five(&stack_a, &stack_b);
 	else
 	{
 		a_to_b(&stack_a, &stack_b);
