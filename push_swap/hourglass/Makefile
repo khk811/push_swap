@@ -6,13 +6,13 @@
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 12:13:42 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/05/02 13:31:42 by hyunkkim         ###   ########seoul.kr   #
+#    Updated: 2022/05/02 14:46:51 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=push_swap
 BONUS=checker
-CC=gcc
+CC=cc
 CFLAGS=-Wall -Wextra -Werror
 LIB_NAME=ftprintf
 LIB_DIR= ./ft_printf/
@@ -26,20 +26,17 @@ SRC= main.c \
 	add_elem_bottom.c \
 	stack_utils.c \
 	operations.c \
-	hard_sort.c \
+	sort_below_five.c \
 	a_to_b.c \
 	b_to_a.c \
 	utils.c
 SRC_BONUS = main_bonus.c \
 			parse_input_bonus.c \
+			add_elem_bottom_bonus.c \
 			parse_operation_bonus.c \
-			check_sort_bonus.c \
-			new_stack_elem_bonus.c \
 			do_sort_op_bonus.c \
+			operations_bonus.c \
 			stack_utils_bonus.c \
-			push_bonus.c \
-			swap_bonus.c \
-			rotate_bonus.c \
 			utils_bonus.c
 OBJ=$(SRC:.c=.o)
 OBJ_BONUS=$(SRC_BONUS:.c=.o)

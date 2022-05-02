@@ -6,12 +6,12 @@
 #    By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/15 17:13:44 by hyunkkim          #+#    #+#              #
-#    Updated: 2022/04/29 15:57:57 by hyunkkim         ###   ########seoul.kr   #
+#    Updated: 2022/05/02 14:47:06 by hyunkkim         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libftprintf.a
-CC=gcc
+CC=cc
 CFLAGS=-Wall -Wextra -Werror
 LIB_DIR=../Libft/
 LIB_NAME=ft
