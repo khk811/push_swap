@@ -6,27 +6,11 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 21:14:17 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/04/25 17:25:28 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 13:28:07 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	count_stack_size(t_stack *stack)
-{
-	t_stack	*tmp;
-	int		ret;
-
-	tmp = stack;
-	ret = 0;
-	while (tmp->next != stack)
-	{
-		ret++;
-		tmp = tmp->next;
-	}
-	ret++;
-	return (ret);
-}
 
 int	make_chunk(t_stack *stack)
 {

@@ -6,53 +6,24 @@
 /*   By: hyunkkim <hyunkkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:55:30 by hyunkkim          #+#    #+#             */
-/*   Updated: 2022/05/02 13:16:52 by hyunkkim         ###   ########seoul.kr  */
+/*   Updated: 2022/05/02 13:27:49 by hyunkkim         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	assign_elem_index(t_stack *elem1, t_stack *elem2)
+t_stack	*new_stack_elem(int input)
 {
-	if (elem1->value == elem2->value)
-		print_error();
-	else if (elem1->value > elem2->value)
-		elem1->index++;
-	else if (elem1->value < elem2->value)
-		elem2->index++;
-}
+	t_stack	*ret;
 
-t_stack	*modify_stack_index(t_stack **stack, t_stack *new)
-{
-	t_stack	*tmp;
-
-	tmp = *stack;
-	while (tmp->next != *stack)
-	{
-		assign_elem_index(tmp, new);
-		tmp = tmp->next;
-	}
-	assign_elem_index(tmp, new);
-	return (tmp);
-}
-
-void	add_elem_bottom(t_stack **stack, t_stack *new)
-{
-	t_stack	*tmp;
-	t_stack	*last;
-
-	if (!*stack)
-	{
-		*stack = new;
-		return ;
-	}
-	tmp = *stack;
-	last = modify_stack_index(stack, new);
-	new->next = tmp;
-	new->prev = last;
-	tmp->prev = new;
-	last->next = new;
-	return ;
+	ret = ft_calloc(1, sizeof(t_stack));
+	if (!ret)
+		exit(1);
+	ret->index = 0;
+	ret->value = input;
+	ret->prev = ret;
+	ret->next = ret;
+	return (ret);
 }
 
 void	add_elem_top(t_stack **stack, t_stack *elem)
@@ -81,4 +52,34 @@ t_stack	*detach_elem(t_stack **stack)
 	target->prev = target;
 	target->next = target;
 	return (target);
+}
+
+int	count_stack_size(t_stack *stack)
+{
+	t_stack	*tmp;
+	int		ret;
+
+	tmp = stack;
+	ret = 0;
+	while (tmp->next != stack)
+	{
+		ret++;
+		tmp = tmp->next;
+	}
+	ret++;
+	return (ret);
+}
+
+int	is_stack_sorted(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	while (tmp->next != stack)
+	{
+		if (tmp->value > (tmp->next)->value)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
